@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script src="~/js/linq-controller.js" asp-append-version="true"></script>
+}
+<p markdown>
+    # LINQ
+
+    In this example, use LINQ queries to get the correct data in the `LinqController` from the `GradeList` object to return the following:
+
+    * Average Grade Percentage for Classs
+    * How many students received each letter grade
+    * A list of students ordered by their number grade descending (Grade - FirstName LastName)
+</p>
+
+<hr/>
+<div class="mb-2 text-center">
+    <button class="btn btn-info btn-sm" name="runBtn" type="button"> Click For Results </button>
+</div>
+
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-md-4 text-center">
+            <h4>Average Grade</h4>
+            <div class="avg-content">
+                <p>RESULT HERE</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4>List of Grades and Number of Students</h4>
+            <div class="grade-count-content">
+                <p>RESULT HERE</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4>List of Students Ordered By Grades Descending</h4>
+            <div class="ordered-students-content">
+                <p>RESULT HERE</p>
+            </div>
+        </div>
+    </div>
+</div>

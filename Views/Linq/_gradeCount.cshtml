@@ -1,0 +1,21 @@
+﻿@model IEnumerable<CodingTest.Models.GradeLetterAndCount>
+
+<div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Grade</th>
+                <th>Number Of Students</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gradeCount in @Model)
+            {
+                <tr>
+                    <td>@gradeCount.GradeLetter</td>
+                    <td>@gradeCount.TotalStudents</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>

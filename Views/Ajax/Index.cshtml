@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script src="~/js/ajax-controller.js" asp-append-version="true"></script>
+}
+<p markdown>
+    # Ajax
+
+    The point of this challenge is simple to load the HTML from the `Data` method on the `AjaxController` when the button is clicked, and place it in the `#content` div provided below.
+    Feel free to use any method or framework you want to achieve this.
+</p>
+<div class="text-center">
+<button onclick="loadPage();" class="btn btn-sm btn-outline-info">Load 'Data' Page</button>
+</div>
+<div id="content"></div>

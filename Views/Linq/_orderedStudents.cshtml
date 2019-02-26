@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CodingTest.Models.StudentGrade>
+
+<div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Students</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in @Model)
+            {
+                <tr>
+                    <td>@(student.NumberGrade + " - " + student.FirstName + " " + student.LastName)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

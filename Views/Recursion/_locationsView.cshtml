@@ -1,0 +1,36 @@
+﻿@model CodingTest.Models.Location
+
+@functions {
+
+    void BuildTree(CodingTest.Models.Location location, ref string html, int level = 1, char symbol = '-')
+    {
+        var hasChildren = location.ChildrenLocations.Any();
+
+        html += CreateTreeItem(location, hasChildren, level, symbol);
+
+        if (hasChildren)
+        {
+            foreach (var child in location.ChildrenLocations)
+            {
+                BuildTree(child, ref html, level + 1, symbol);
+            }
+        }
+    }
+
+    string CreateTreeItem(CodingTest.Models.Location loc, bool hasChildren, int level, char symbol)
+    {
+        var text_color = hasChildren ? "text-info" : string.Empty;
+        var font_weight = hasChildren ? "font-weight-bold" : "font-italic";
+        var indentStr = new string('\t', level);
+
+        return  $"<div><span style=\"white-space: pre;\">{indentStr}</span><span class=\"{text_color} {font_weight}\">{symbol}</span><span class=\"{font_weight} {text_color}\">{loc.Name}</span></div>";
+
+    }
+
+}
+
+@{
+    var treeView = string.Empty;
+    BuildTree(Model, html: ref treeView);
+    <div>@Html.Raw(treeView)</div>
+}
